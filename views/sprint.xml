@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- VISTA TREE -->
+
+    <record id="vista_managehugo_sprint_tree" model="ir.ui.view">
+      <field name="name">vista_managehugo_sprint_tree</field>
+      <field name="model">managehugo.sprint</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="start_date"/>
+          <field name="end_date"/>
+<!--          <field name="tasks_ids"/>-->
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- VISTA FORM -->
+
+    <record id="vista_managehugo_sprint_form" model="ir.ui.view">
+      <field name="name">vista_managehugo_sprint_form</field>
+      <field name="model">managehugo.sprint</field>
+      <field name="arch" type="xml">
+        <form string="formulario_sprint">
+          <sheet>
+            <group name="group_top">
+              <field name="name"/>
+              <field name="description"/>
+              <field name="start_date"/>
+              <field name="end_date"/>
+<!--              <field name="tasks_ids"/>-->
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- ACCIONES -->
+
+    <record id="accion_managehugo_sprint_form" model="ir.actions.act_window">
+      <field name="name">Sprints</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">managehugo.sprint</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Sprints
+        </p>
+        <p>
+          Click <strong> 'Crear' </strong> para añadir nuevos elementos
+        </p>
+      </field>
+    </record>
+
+
+    <!-- ACCIÓN -->
+
+    <menuitem name="Sprints" id="menu_managehugo_sprint" parent="menu_managehugo_manage"
+              action="accion_managehugo_sprint_form"/>
+
+
+  </data>
+</odoo>

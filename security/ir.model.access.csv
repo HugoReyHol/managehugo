@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_managehugo_task,managehugo.task,model_managehugo_task,base.group_user,1,1,1,1
+access_managehugo_sprint,managehugo.sprint,model_managehugo_sprint,base.group_user,1,1,1,1
+access_managehugo_project,managehugo.project,model_managehugo_project,base.group_user,1,1,1,1
+access_managehugo_history,managehugo.history,model_managehugo_history,base.group_user,1,1,1,1
+access_managehugo_technology,managehugo.technology,model_managehugo_technology,base.group_user,1,1,1,1
+
