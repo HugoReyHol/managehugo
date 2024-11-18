@@ -28,6 +28,7 @@
               <field name="name"/>
               <field name="description"/>
               <field name="histories_ids"/>
+              <field name="sprints_ids"/>
             </group>
           </sheet>
         </form>

@@ -14,3 +14,9 @@ class project(models.Model):
         inverse_name='project_id',
         string='Histories',
         required=False)
+
+    sprints_ids = fields.One2many(
+        comodel_name='managehugo.sprint',
+        inverse_name='project_id',
+        string='Sprints',
+        required=False)
