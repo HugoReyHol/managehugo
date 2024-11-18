@@ -12,4 +12,4 @@ class task(models.Model):
     is_paused = fields.Boolean(string='Pausado')
 
     # Relación entre tablas
-    # sprint_id = fields.Many2one(comodel_name="managehugo.sprint", string="Sprint", required=True, ondelete="cascade")
+    sprint_id = fields.Many2one(comodel_name="managehugo.sprint", string="Sprint", required=True, ondelete="cascade")

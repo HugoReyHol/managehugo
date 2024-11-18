@@ -11,4 +11,4 @@ class sprint(models.Model):
     end_date = fields.Datetime(string="Fecha final")
 
     # RELACIÓN TABLAS
-    # tasks_ids = fields.One2many(string='Tasks', comodel_name="managehugo.tasks", inverse_name="sprint_id")
+    tasks_ids = fields.One2many(string='Tasks', comodel_name="managehugo.task", inverse_name="sprint_id")
