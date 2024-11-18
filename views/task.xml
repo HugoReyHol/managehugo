@@ -37,6 +37,7 @@
               <field name="is_paused"/>
               <field name="sprint_id"/>
               <field name="technologies_ids"/>
+              <field name="history_id"/>
             </group>
           </sheet>
         </form>

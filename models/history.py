@@ -14,3 +14,9 @@ class history(models.Model):
         string='Project',
         required=False,
         ondelete="cascade")
+
+    tasks_ids = fields.One2many(
+        comodel_name='managehugo.task',
+        inverse_name='history_id',
+        string='Tasks',
+        required=False)

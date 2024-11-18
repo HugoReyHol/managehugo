@@ -28,6 +28,7 @@
               <field name="name"/>
               <field name="description"/>
               <field name="project_id"/>
+              <field name="tasks_ids"/>
             </group>
           </sheet>
         </form>

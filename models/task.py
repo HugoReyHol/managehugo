@@ -18,3 +18,9 @@ class task(models.Model):
                                         relation='tasks_technologies',
                                         column1="technologies_ids",
                                         column2="tasks_ids")
+
+    history_id = fields.Many2one(
+        comodel_name='managehugo.history',
+        string='History',
+        required=False)
+    
