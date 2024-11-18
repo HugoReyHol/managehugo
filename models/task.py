@@ -11,5 +11,10 @@ class task(models.Model):
     end_date = fields.Datetime(string="Fecha final")
     is_paused = fields.Boolean(string='Pausado')
 
-    # Relación entre tablas
+    # Relaciones entre tablas
     sprint_id = fields.Many2one(comodel_name="managehugo.sprint", string="Sprint", required=True, ondelete="cascade")
+    technologies_ids = fields.Many2many(comodel_name='managehugo.technology',
+                                        string='Technologies',
+                                        relation='tasks_technologies',
+                                        column1="technologies_ids",
+                                        column2="tasks_ids")
