@@ -27,6 +27,7 @@
             <group name="group_top">
               <field name="name"/>
               <field name="description"/>
+              <field name="histories_ids"/>
             </group>
           </sheet>
         </form>

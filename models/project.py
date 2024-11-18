@@ -7,3 +7,10 @@ class project(models.Model):
 
     name = fields.Char(string='Nombre')
     description = fields.Char(string='Descripción')
+
+    # Relaciones entre tablas
+    histories_ids = fields.One2many(
+        comodel_name='managehugo.history',
+        inverse_name='project_id',
+        string='Histories',
+        required=False)

@@ -7,3 +7,10 @@ class history(models.Model):
 
     name = fields.Char(string='Nombre')
     description = fields.Char(string='Descripción')
+
+    # Relaciones entre tablas
+    project_id = fields.Many2one(
+        comodel_name='managehugo.project',
+        string='Project',
+        required=False,
+        ondelete="cascade")
