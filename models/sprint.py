@@ -14,7 +14,7 @@ class sprint(models.Model):
     tasks_ids = fields.One2many(string='Tasks', comodel_name="managehugo.task", inverse_name="sprint_id")
 
     project_id = fields.Many2one(
-        comodel_name='managehugo.sprint',
+        comodel_name='managehugo.project',
         string='Project',
         required=False,
         ondelete="cascade")
