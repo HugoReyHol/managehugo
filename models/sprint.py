@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+import datetime
 
 
 class sprint(models.Model):
@@ -7,8 +8,9 @@ class sprint(models.Model):
 
     name = fields.Char(string='Nombre')
     description = fields.Char(string='Descripción')
+    duration = fields.Integer(string='Duración')
     start_date = fields.Datetime(string="Fecha comienzo")
-    end_date = fields.Datetime(string="Fecha final")
+    end_date = fields.Datetime(string="Fecha final", compute="_get_end_date", store=True)
 
     # RELACIÓN TABLAS
     tasks_ids = fields.One2many(string='Tasks', comodel_name="managehugo.task", inverse_name="sprint_id")
@@ -18,3 +20,12 @@ class sprint(models.Model):
         string='Project',
         required=False,
         ondelete="cascade")
+
+    # CAMPOS COMPUTADOS
+    @api.depends('start_date', 'duration')
+    def _get_end_date(self):
+        for sprint in self:
+            if isinstance(sprint.start_date, datetime.datetime) and sprint.duration > 0:
+                sprint.end_date = sprint.start_date + datetime.timedelta(days=sprint.duration)
+            else:
+                sprint.end_date = sprint.start_date
