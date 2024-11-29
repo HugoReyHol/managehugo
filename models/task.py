@@ -10,6 +10,7 @@ class task(models.Model):
     start_date = fields.Datetime(string="Fecha comienzo")
     end_date = fields.Datetime(string="Fecha final")
     is_paused = fields.Boolean(string='Pausado')
+    code = fields.Char(string='Código', compute='_get_code')
 
     # Relaciones entre tablas
     sprint_id = fields.Many2one(comodel_name="managehugo.sprint", string="Sprint", required=True, ondelete="cascade")
@@ -23,4 +24,8 @@ class task(models.Model):
         comodel_name='managehugo.history',
         string='History',
         required=False)
-    
+
+    # CAMPOS COMPUTADOS
+    def _get_code(self):
+        for task in self:
+            task.code = "TSK_" + str(task.id)
