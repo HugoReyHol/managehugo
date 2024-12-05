@@ -27,6 +27,12 @@ class task(models.Model):
         string='History',
         required=False)
 
+    project_id = fields.Many2one(
+        comodel_name='managehugo.project',
+        string='Proyecto',
+        related="history_id.project_id",
+        readonly=True)
+
     # CAMPOS COMPUTADOS
     def _get_code(self):
         for task in self:
