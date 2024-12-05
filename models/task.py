@@ -13,6 +13,7 @@ class task(models.Model):
     end_date = fields.Datetime(string="Fecha final")
     is_paused = fields.Boolean(string='Pausado')
     code = fields.Char(string='Código', compute='_get_code')
+    definition_date = fields.Datetime(string="Definición de la tarea", default=lambda _: datetime.datetime.now())
 
     # Relaciones entre tablas
     sprint_id = fields.Many2one(comodel_name="managehugo.sprint", string="Sprint", compute="_get_sprint", store=True)

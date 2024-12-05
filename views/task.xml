@@ -40,6 +40,7 @@
               <field name="technologies_ids"/>
               <field name="history_id"/>
               <field name="project_id"/>
+              <field name="definition_date"/>
             </group>
           </sheet>
         </form>
