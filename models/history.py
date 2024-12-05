@@ -20,3 +20,21 @@ class history(models.Model):
         inverse_name='history_id',
         string='Tasks',
         required=False)
+
+    used_technologies = fields.Many2many(
+        comodel_name='managehugo.technology',
+        string='Tecnologías usadas',
+        compute="_get_used_technologies")
+
+    # CAMPOS COMPUTADOS
+    def _get_used_technologies(self):
+        for history in self:
+            technologies = None
+
+            for task in history.tasks_ids:
+                if not technologies:
+                    technologies = task.technologies_ids
+                else:
+                    technologies = technologies + task.technologies_ids
+
+            history.used_technologies = technologies
