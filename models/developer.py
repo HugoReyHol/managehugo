@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class ModelName(models.Model):
+class developer(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
