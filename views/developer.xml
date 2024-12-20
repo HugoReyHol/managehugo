@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="vista_managehugo_developer_form" model="ir.ui.view">
+      <field name="name">vista_managehugo_developer_form</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="technologies_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="managehugo.action_developer_window" model="ir.actions.act_window">
+      <field name="name">Manage developer window</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="managehugo.action_view_developer_tree" model="ir.actions.act_window.view">
+      <field name="sequence" eval="1"></field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="base.view_partner_tree"></field>
+      <field name="act_window_id" ref="managehugo.action_developer_window"></field>
+    </record>
+
+    <record id="managehugo.action_view_developer_form" model="ir.actions.act_window.view">
+      <field name="sequence" eval="2"></field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="managehugo.vista_managehugo_developer_form"></field>
+      <field name="act_window_id" ref="managehugo.action_developer_window"></field>
+    </record>
+
+    <menuitem name="Devs" id="managehugo.menu_1_devs_list" parent="menu_managehugo_raiz"
+              action="managehugo.action_developer_window"/>
+
+  </data>
+</odoo>

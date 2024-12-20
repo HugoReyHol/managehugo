@@ -8,7 +8,7 @@ class sprint(models.Model):
 
     name = fields.Char(string='Nombre')
     description = fields.Char(string='Descripción')
-    duration = fields.Integer(string='Duración', dufault=15)
+    duration = fields.Integer(string='Duración', default=15)
     start_date = fields.Datetime(string="Fecha comienzo")
     end_date = fields.Datetime(string="Fecha final", compute="_get_end_date", store=True)
 
