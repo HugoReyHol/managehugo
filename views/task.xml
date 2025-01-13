@@ -57,7 +57,7 @@
           <field name="status"/>
           <templates>
             <t t-name="kanban-box">
-              <div t-attf-class="oe_kanban_card {{ record.status.raw_value }}">
+              <div t-attf-class="oe_kanban_global_click">
                 <div class="o_kanban_details">
                   <strong><field name="name"/></strong>
                   <div><field name="description"/></div>
