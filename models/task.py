@@ -14,10 +14,13 @@ class task(models.Model):
     definition_date = fields.Datetime(string="Definición de la tarea", default=lambda _: datetime.datetime.now())
     status = fields.Selection(
         string='Estado',
-        selection=[('pendiente', 'Pendiente'),
-                   ('pausada', 'Pausada'),
-                   ('en_proceso', 'En proceso'),
-                   ('completada', 'Completada')],
+        selection=[
+            ('pendiente', 'Pendiente'),
+            ('pausada', 'Pausada'),
+            ('en_proceso', 'En proceso'),
+            ('completada', 'Completada')
+        ],
+        group_expand='_expand_groups',
         default='pendiente',
         required=True
     )
@@ -58,3 +61,7 @@ class task(models.Model):
                     found = True
             if not found:
                 task.sprint_id = False
+
+    @api.model
+    def _expand_groups(self, states, domain, order):
+        return ['pendiente', 'pausada', 'en_proceso', 'completada']
