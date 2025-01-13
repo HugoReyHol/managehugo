@@ -53,7 +53,7 @@
       <field name="name">vista_managehugo_task_kanban</field>
       <field name="model">managehugo.task</field>
       <field name="arch" type="xml">
-        <kanban class="o_kanban_view" default_group_by="status">
+        <kanban class="o_kanban_view" default_group_by="status" default_order="status desc">
           <field name="status"/>
           <templates>
             <t t-name="kanban-box">
