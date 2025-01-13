@@ -13,7 +13,7 @@
           <field name="description"/>
           <field name="start_date"/>
           <field name="end_date"/>
-          <field name="is_paused"/>
+          <field name="status"/>
           <field name="sprint_id"/>
           <field name="technologies_ids"/>
         </tree>
@@ -35,7 +35,7 @@
               <field name="description"/>
               <field name="start_date"/>
               <field name="end_date"/>
-              <field name="is_paused"/>
+              <field name="status"/>
               <field name="sprint_id"/>
               <field name="technologies_ids"/>
               <field name="history_id"/>
