@@ -65,3 +65,9 @@ class task(models.Model):
     @api.model
     def _expand_groups(self, states, domain, order):
         return ['pendiente', 'pausada', 'en_proceso', 'completada']
+
+    @api.onchange('status')
+    def _onchange_status(self):
+        for task in self:
+            if task.status == 'completada' and not task.end_date :
+                task.end_date = datetime.datetime.now()

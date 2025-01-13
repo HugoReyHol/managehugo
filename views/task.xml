@@ -62,6 +62,7 @@
                   <strong><field name="name"/></strong>
                   <div><field name="description"/></div>
                   <div><span><field name="start_date"/></span></div>
+                  <div><span><field name="end_date"/></span></div>
                 </div>
               </div>
             </t>
