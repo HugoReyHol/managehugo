@@ -6,8 +6,8 @@ class task(models.Model):
     _name = 'managehugo.task'
     _description = 'managehugo.task'
 
-    name = fields.Char(string='Nombre')
-    description = fields.Char(string='Descripción')
+    name = fields.Char(string='Nombre', required=True)
+    description = fields.Char(string='Descripción', required=True)
     start_date = fields.Datetime(string="Fecha comienzo")
     end_date = fields.Datetime(string="Fecha final")
     code = fields.Char(string='Código', compute='_get_code')
@@ -71,3 +71,5 @@ class task(models.Model):
         for task in self:
             if task.status == 'completada' and not task.end_date :
                 task.end_date = datetime.datetime.now()
+            if task.status != 'pendiente' and not task.start_date:
+                task.start_date = datetime.datetime.now()

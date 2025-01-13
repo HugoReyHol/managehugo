@@ -61,8 +61,8 @@
                 <div class="o_kanban_details">
                   <strong><field name="name"/></strong>
                   <div><field name="description"/></div>
-                  <div><span><field name="start_date"/></span></div>
-                  <div><span><field name="end_date"/></span></div>
+                  <div><span>Fecha de inicio: <field name="start_date"/><span t-if="!record.start_date.value">sin iniciar</span></span></div>
+                  <div><span>Fecha de fin: <field name="end_date"/><span t-if="!record.end_date.value">sin completar</span></span></div>
                 </div>
               </div>
             </t>
