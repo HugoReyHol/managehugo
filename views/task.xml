@@ -61,7 +61,7 @@
                 <div class="o_kanban_details">
                   <strong><field name="name"/></strong>
                   <div><field name="description"/></div>
-                  <div><span><field name="start_date"/></span>aaaaaaaaaaaaa</div>
+                  <div><span><field name="start_date"/></span></div>
                 </div>
               </div>
             </t>
